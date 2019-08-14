@@ -41,4 +41,4 @@ def delete(key):
     db.delete(key)
 
 if __name__ == '__main__':
-    app.run(host=None, port=None, threaded=True,  processes=3)
+    app.run(host=None, port=None, processes=3)
