@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from flask import Flask, jsonify, request
+from flask import Flask, Response, jsonify, request
+from flask_api import status
 from flask_redis import FlaskRedis
 from config import DevelopmentConfig
 import cachetools
@@ -25,19 +26,15 @@ def get(key):
             redis_result = db.get(key)
             cached[key] = redis_result
             decoded_key = cached[key].decode("utf-8")
-            return decoded_key
+            return Response(decoded_key, status=200)
         else:
             print("{} not found".format(key))
+            return status.HTTP_404_NOT_FOUND
 
 @app.route('/<key>:<value>', methods=['POST'])
 def post(key, value):
-    if key in cached:
-        print("{} is already saved".format(key))
-    elif db.exists(key):
-        print("{} is already saved".format(key))
-
     redis_result = db.set(key, value)
-    return redis_result
+    return Response(redis_result, status=201)
 
 @app.route('/<key>', methods=['DELETE'])
 def delete(key):
