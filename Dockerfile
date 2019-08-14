@@ -1,6 +1,8 @@
 FROM python:3
 
-ADD proxy_service.py /
+COPY proxy_service.py /
+
+COPY config.py /
 
 COPY requirements.txt ./
 
