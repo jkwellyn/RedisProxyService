@@ -42,5 +42,5 @@ Total time spent was ~8 hours
 
 ## Omitted Requirements
 
-* Could not figure out how to test TTL
+* Could not figure out how to test threading. Spawned a bunch of calls that appear to succeed but the total threadcount kept returning as 1.
 
