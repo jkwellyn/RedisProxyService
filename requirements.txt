@@ -14,7 +14,7 @@ Flask-RESTful==0.3.7
 Flask-SQLAlchemy==2.4.0
 flask-swagger==0.2.13
 Flask-WTF==0.14.2
-redis==3.3.6
+redis==4.4.4
 redis-protocol==0.0.2
 redis-proxy==0.0.2
 requests==2.21.0
