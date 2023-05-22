@@ -17,4 +17,4 @@ Flask-WTF==0.14.2
 redis==3.3.6
 redis-protocol==0.0.2
 redis-proxy==0.0.2
-requests==2.21.0
+requests==2.31.0
